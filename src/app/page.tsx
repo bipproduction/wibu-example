@@ -1,4 +1,5 @@
 import { Card, Flex, Stack, Title } from "@mantine/core";
+import Link from "next/link";
 
 
 const listMenu = [
@@ -18,7 +19,7 @@ export default function Home() {
     <Stack h={"100vh"} align="center" justify="center">
       <Title>WIBU EXAMPLE</Title>
       <Flex wrap={"wrap"} gap={"md"}>
-        {listMenu.map((item, index) => <Card w={200} component="a" href={item.url} key={index} >
+        {listMenu.map((item, index) => <Card w={200} component={Link} href={item.url} key={index} >
           <Stack>
             {item.name}
           </Stack>

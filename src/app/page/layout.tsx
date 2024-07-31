@@ -1,4 +1,5 @@
 import { ActionIcon, Box, Flex, Stack, Text } from "@mantine/core";
+import Link from "next/link";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
     return <Stack gap={0}>
@@ -6,7 +7,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             zIndex: 99,
             backdropFilter: "blur(30px)",
         }}>
-            <ActionIcon variant="outline" radius={100} component="a" href="/">
+            <ActionIcon variant="outline" radius={100} component={Link} href="/">
                 <Text>{"<"}</Text>
             </ActionIcon>
         </Flex>
