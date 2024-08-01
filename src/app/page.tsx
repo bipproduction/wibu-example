@@ -17,13 +17,18 @@ const listMenu = [
     id: "3",
     name: "react html",
     url: "/page/react-html"
+  },
+  {
+    id: "3",
+    name: "scroll flex",
+    url: "/page/scroll-flex"
   }
 ]
 export default function Home() {
   return (
     <Stack h={"100vh"} align="center" justify="center">
       <Title>WIBU EXAMPLE</Title>
-      <Flex wrap={"wrap"} gap={"md"}>
+      <Flex wrap={"wrap"} gap={"md"} justify={"center"}>
         {listMenu.map((item, index) => <Card w={200} component={Link} href={item.url} key={index} >
           <Stack>
             {item.name}
