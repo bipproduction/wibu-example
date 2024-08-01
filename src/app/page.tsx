@@ -12,6 +12,11 @@ const listMenu = [
     id: "2",
     name: "revalidate",
     url: "/page/revalidate"
+  },
+  {
+    id: "3",
+    name: "react html",
+    url: "/page/react-html"
   }
 ]
 export default function Home() {
