@@ -1,0 +1,27 @@
+type,name,method,api
+branch,List branches,GET,/repos/{owner}/{repo}/branches
+branch,Get a branch,GET,/repos/{owner}/{repo}/branches/{branch}
+branch,Sync a fork branch with the upstream repository,POST,/repos/{owner}/{repo}/merge-upstream
+code-scaning,List code scanning alerts for a repository,GET,/repos/{owner}/{repo}/code-scanning/alerts
+code-scaning,Get a code scanning alert,GET,/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}
+code-scaning,List repository collaboratorsList instances of a code scanning alert,GET,/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances
+code-scaning,List code scanning analyses for a repository,GET,/repos/{owner}/{repo}/code-scanning/analyses
+code-scaning,Get a code scanning analysis for a repository,GET,/repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}
+colaborator,List repository collaborators,GET,/repos/{owner}/{repo}/collaborators
+commits,List commits,GET,/repos/{owner}/{repo}/commits
+commits,List branches for HEAD commit,GET,/repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head
+commits,List pull requests associated with a commit,GET,/repos/{owner}/{repo}/commits/{commit_sha}/pulls
+commits,Get a commit,GET,/repos/{owner}/{repo}/commits/{ref}
+commit,Get a commit comment,GET,/repos/{owner}/{repo}/comments/{comment_id}
+issues,List issues assigned to the authenticated user,GET,/issues
+issues,List repository issues,GET,/repos/{owner}/{repo}/issues
+issues,Get an issue,GET,/repos/{owner}/{repo}/issues/{issue_number}
+issues,Create an issue,POST,/repos/{owner}/{repo}/issues
+issues,Update an issue,PATCH,/repos/{owner}/{repo}/issues/{issue_number}
+issues,Lock an issue,PUT,/repos/{owner}/{repo}/issues/{issue_number}/lock
+issues,Unlock an issue,DELETE,/repos/{owner}/{repo}/issues/{issue_number}/lock
+issues,List user account issues assigned to the authenticated user,GET,/user/issues
+assignees,List assignees,GET,/repos/{owner}/{repo}/assignees
+assignees,Check if a user can be assigned,GET,/repos/{owner}/{repo}/assignees/{assignee}
+assignees,Add assignees to an issue,POST,/repos/{owner}/{repo}/issues/{issue_number}/assignees
+assignees,Remove assignees from an issue,

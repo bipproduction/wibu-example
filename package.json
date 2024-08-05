@@ -25,7 +25,9 @@
     "ioredis": "^5.4.1",
     "lodash": "^4.17.21",
     "next": "14.2.5",
+    "next-auth": "^4.24.7",
     "node-persist": "^4.0.2",
+    "octokit": "^4.0.2",
     "react": "^18",
     "react-dom": "^18"
   },

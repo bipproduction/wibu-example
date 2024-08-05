@@ -3,11 +3,11 @@
 import prisma from "@/lib/db/prisma";
 import { cookies } from "next/headers";
 
-const secretKey = process.env.SECRET_KEY;
+// const secretKey = process.env.SECRET_KEY;
 
-if (!secretKey) {
-  throw new Error("SECRET_KEY is not defined in environment variables.");
-}
+// if (!secretKey) {
+//   throw new Error("SECRET_KEY is not defined in environment variables.");
+// }
 
 export async function actionUserValidation() {
   try {
@@ -30,7 +30,7 @@ export async function actionUserValidation() {
       return null;
     }
 
-    console.log(token, user, token, secretKey);
+    // console.log(token, user, token, secretKey);
 
     return user;
   } catch (error) {

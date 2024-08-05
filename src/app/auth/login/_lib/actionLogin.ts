@@ -2,7 +2,7 @@
 
 import prisma from "@/lib/db/prisma";
 import { cookies } from "next/headers";
-const secretKey = process.env.SECRET_KEY;
+// const secretKey = process.env.SECRET_KEY;
 interface FormData {
   email: string;
   password: string;

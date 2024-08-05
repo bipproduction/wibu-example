@@ -1,12 +1,8 @@
-import { Button, Card, Stack, Text, Title } from "@mantine/core";
-import { FormLogin } from "./_ui/formLogin";
-import { cookies } from 'next/headers'
-import prisma from "@/lib/db/prisma";
-import Link from "next/link";
-import CryptoJS from "crypto-js";
-import { actionUserValidation } from "./_lib/actionUserValidateion";
+import { Card, Stack, Title } from "@mantine/core";
 import { redirect } from "next/navigation";
-const secretKey =  process.env.SECRET_KEY!
+import { actionUserValidation } from "./_lib/actionUserValidateion";
+import { FormLogin } from "./_ui/formLogin";
+// const secretKey =  process.env.SECRET_KEY!
 
 export default async function Page() {
     const user = await actionUserValidation()
