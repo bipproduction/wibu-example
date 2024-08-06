@@ -1,0 +1,435 @@
+[
+    {
+        "type": "branches",
+        "name": "List branches",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}/branches",
+        "body": {}
+    },
+    {
+        "type": "branches",
+        "name": "Get a branch",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}/branches/{branch}",
+        "body": {}
+    },
+    {
+        "type": "branches",
+        "name": "Sync a fork branch with the upstream repository",
+        "method": "POST",
+        "api": "/repos/{owner}/{repo}/merge-upstream",
+        "body": {
+            "branch": "main"
+        }
+    },
+    {
+        "type": "code-scaning",
+        "name": "List code scanning alerts for a repository",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}/code-scanning/alerts",
+        "body": {}
+    },
+    {
+        "type": "code-scaning",
+        "name": "Get a code scanning alert",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}",
+        "body": {}
+    },
+    {
+        "type": "code-scaning",
+        "name": "List repository collaboratorsList instances of a code scanning alert",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances",
+        "body": {}
+    },
+    {
+        "type": "code-scaning",
+        "name": "List code scanning analyses for a repository",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}/code-scanning/analyses",
+        "body": {}
+    },
+    {
+        "type": "code-scaning",
+        "name": "Get a code scanning analysis for a repository",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}",
+        "body": {}
+    },
+    {
+        "type": "colaborators",
+        "name": "List repository collaborators",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}/collaborators",
+        "body": {}
+    },
+    {
+        "type": "commits",
+        "name": "List commits",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}/commits",
+        "body": {}
+    },
+    {
+        "type": "commits",
+        "name": "List branches for HEAD commit",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head",
+        "body": {}
+    },
+    {
+        "type": "commits",
+        "name": "List pull requests associated with a commit",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}/commits/{commit_sha}/pulls",
+        "body": {}
+    },
+    {
+        "type": "commits",
+        "name": "Get a commit",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}/commits/{ref}",
+        "body": {}
+    },
+    {
+        "type": "commits",
+        "name": "Get a commit comment",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}/comments/{comment_id}",
+        "body": {}
+    },
+    {
+        "type": "issues",
+        "name": "List issues assigned to the authenticated user",
+        "method": "GET",
+        "api": "/issues",
+        "body": {}
+    },
+    {
+        "type": "issues",
+        "name": "List repository issues",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}/issues",
+        "body": {}
+    },
+    {
+        "type": "issues",
+        "name": "Get an issue",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}/issues/{issue_number}",
+        "body": {}
+    },
+    {
+        "type": "issues",
+        "name": "Create an issue",
+        "method": "POST",
+        "api": "/repos/{owner}/{repo}/issues",
+        "body": {
+            "title": "Found a bug",
+            "body": "I having a problem with this.",
+            "assignees": [
+                "octocat"
+            ],
+            "milestone": 1,
+            "labels": [
+                "bug"
+            ]
+        }
+    },
+    {
+        "type": "issues",
+        "name": "Update an issue",
+        "method": "PATCH",
+        "api": "/repos/{owner}/{repo}/issues/{issue_number}",
+        "body": {
+            "title": "Found a bug",
+            "body": "I having a problem with this.",
+            "assignees": [
+                "octocat"
+            ],
+            "milestone": 1,
+            "state": "open",
+            "labels": [
+                "bug"
+            ]
+        }
+    },
+    {
+        "type": "issues",
+        "name": "Lock an issue",
+        "method": "PUT",
+        "api": "/repos/{owner}/{repo}/issues/{issue_number}/lock",
+        "body": {
+            "lock_reason": "off-topic"
+        }
+    },
+    {
+        "type": "issues",
+        "name": "Unlock an issue",
+        "method": "DELETE",
+        "api": "/repos/{owner}/{repo}/issues/{issue_number}/lock",
+        "body": {}
+    },
+    {
+        "type": "issues",
+        "name": "List user account issues assigned to the authenticated user",
+        "method": "GET",
+        "api": "/user/issues",
+        "body": {}
+    },
+    {
+        "type": "assignees",
+        "name": "List assignees",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}/assignees",
+        "body": {}
+    },
+    {
+        "type": "assignees",
+        "name": "Check if a user can be assigned",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}/assignees/{assignee}",
+        "body": {}
+    },
+    {
+        "type": "assignees",
+        "name": "Add assignees to an issue",
+        "method": "POST",
+        "api": "/repos/{owner}/{repo}/issues/{issue_number}/assignees",
+        "body": {
+            "assignees": [
+                "hubot",
+                "other_user"
+            ]
+        }
+    },
+    {
+        "type": "assignees",
+        "name": "Remove assignees from an issue",
+        "method": "DELETE",
+        "api": "/repos/{owner}/{repo}/issues/{issue_number}/assignees",
+        "body": {
+            "assignees": [
+                "hubot",
+                "other_user"
+            ]
+        }
+    },
+    {
+        "type": "comments",
+        "name": "List issue comments for a repository",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}/issues/comments",
+        "body": {}
+    },
+    {
+        "type": "comments",
+        "name": "Get an issue comment",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}/issues/comments/{comment_id}",
+        "body": {}
+    },
+    {
+        "type": "comments",
+        "name": "List issue comments",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}/issues/{issue_number}/comments",
+        "body": {}
+    },
+    {
+        "type": "statistics",
+        "name": "Get the weekly commit activity",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}/stats/code_frequency",
+        "body": {}
+    },
+    {
+        "type": "statistics",
+        "name": "Get the last year of commit activity",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}/stats/commit_activity",
+        "body": {}
+    },
+    {
+        "type": "statistics",
+        "name": "Get all contributor commit activity",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}/stats/contributors",
+        "body": {}
+    },
+    {
+        "type": "statistics",
+        "name": "Get the weekly commit count",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}/stats/participation",
+        "body": {}
+    },
+    {
+        "type": "statistics",
+        "name": "Get the hourly commit count for each day",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}/stats/punch_card",
+        "body": {}
+    },
+    {
+        "type": "projects",
+        "name": "List repository projects",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}/projects",
+        "body": {}
+    },
+    {
+        "type": "repositories",
+        "name": "Get repository content",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}/contents/{path}",
+        "body": {}
+    },
+    {
+        "type": "repositories",
+        "name": "Get a repository README",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}/readme",
+        "body": {}
+    },
+    {
+        "type": "repositories",
+        "name": "Get a repository",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}",
+        "body": {}
+    },
+    {
+        "type": "repositories",
+        "name": "List repository activities",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}/activity",
+        "body": {}
+    },
+    {
+        "type": "repositories",
+        "name": "List repository contributors",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}/contributors",
+        "body": {}
+    },
+    {
+        "type": "repositories",
+        "name": "List repositories for the authenticated user",
+        "method": "GET",
+        "api": "/user/repos",
+        "body": {}
+    },
+    {
+        "type": "repositories",
+        "name": "List repositories for a user",
+        "method": "GET",
+        "api": "/users/{username}/repos",
+        "body": {}
+    },
+    {
+        "type": "webhook",
+        "name": "List repository webhooks",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}/hooks",
+        "body": {}
+    },
+    {
+        "type": "webhook",
+        "name": "Create a repository webhook",
+        "method": "POST",
+        "api": "/repos/{owner}/{repo}/hooks",
+        "body": {
+            "name": "web",
+            "active": true,
+            "events": [
+                "push",
+                "pull_request"
+            ],
+            "config": {
+                "url": "https://example.com/webhook",
+                "content_type": "json",
+                "insecure_ssl": "0"
+            }
+        }
+    },
+    {
+        "type": "webhook",
+        "name": "Get a repository webhook",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}/hooks/{hook_id}",
+        "body": {}
+    },
+    {
+        "type": "webhook",
+        "name": "Update a repository webhook",
+        "method": "PATCH",
+        "api": "/repos/{owner}/{repo}/hooks/{hook_id}",
+        "body": {
+            "active": true,
+            "add_events": [
+                "pull_request"
+            ]
+        }
+    },
+    {
+        "type": "webhook",
+        "name": "Delete a repository webhook",
+        "method": "DELETE",
+        "api": "/repos/{owner}/{repo}/hooks/{hook_id}",
+        "body": {}
+    },
+    {
+        "type": "webhook",
+        "name": "Get a webhook configuration for a repository",
+        "method": "/repos/{owner}/{repo}/hooks/{hook_id}/config",
+        "api": "",
+        "body": {}
+    },
+    {
+        "type": "webhook",
+        "name": "Update a webhook configuration for a repository",
+        "method": "PATCH",
+        "api": "/repos/{owner}/{repo}/hooks/{hook_id}/config",
+        "body": {
+            "content_type": "json",
+            "url": "https://example.com/webhook"
+        }
+    },
+    {
+        "type": "webhook",
+        "name": "List deliveries for a repository webhook",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}/hooks/{hook_id}/deliveries",
+        "body": {}
+    },
+    {
+        "type": "webhook",
+        "name": "Get a delivery for a repository webhook",
+        "method": "GET",
+        "api": "/repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}",
+        "body": {}
+    },
+    {
+        "type": "webhook",
+        "name": "Redeliver a delivery for a repository webhook",
+        "method": "POST",
+        "api": "/repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}/attempts",
+        "body": {}
+    },
+    {
+        "type": "webhook",
+        "name": "Ping a repository webhook",
+        "method": "POST",
+        "api": "/repos/{owner}/{repo}/hooks/{hook_id}/pings",
+        "body": {}
+    },
+    {
+        "type": "webhook",
+        "name": "Test the push repository webhook",
+        "method": "POST",
+        "api": "/repos/{owner}/{repo}/hooks/{hook_id}/tests",
+        "body": {}
+    }
+]
