@@ -4,11 +4,25 @@
     "dir": "auto",
     "short_name": "WXM",
     "description": "wibu example",
-    "launch_handler": {},
     "lang": "en",
     "scope": "/",
     "version": "0.0.1",
     "prefer_related_applications": true,
+    "handle_links": "preferred",
+    "launch_handler": {
+        "client_mode": [
+            "navigate-existing",
+            "auto"
+        ]
+    },
+    "edge_side_panel": {
+        "preferred_width": 400
+    },
+    "scope_extensions": [
+        {
+            "origin": "*.ravenstone.cloud"
+        }
+    ],
     "categories": [
         "utility"
     ],
