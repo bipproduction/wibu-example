@@ -5,6 +5,7 @@ import { FormLogin } from "./_ui/formLogin";
 // const secretKey =  process.env.SECRET_KEY!
 
 export default async function Page() {
+
     const user = await actionUserValidation()
 
     if (user) {

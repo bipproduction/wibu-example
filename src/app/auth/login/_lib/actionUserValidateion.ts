@@ -10,8 +10,17 @@ import { cookies } from "next/headers";
 // }
 
 export async function actionUserValidation() {
+  async function getCookieData() {
+    const cookieData = cookies().getAll()
+    return new Promise((resolve) =>
+      setTimeout(() => {
+        resolve(cookieData)
+      }, 1000)
+    )
+  }
+
   try {
-    const cookiesStore = cookies();
+    const cookiesStore: any = await getCookieData();
     const token = cookiesStore.get("token")?.value || "";
 
     if (!token) {
