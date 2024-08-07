@@ -1,7 +1,17 @@
 {
     "name": "wibu example",
-    "short_name": "WX",
+    "id": "makuro.bip.wibu.example",
+    "dir": "auto",
+    "short_name": "WXM",
     "description": "wibu example",
+    "launch_handler": {},
+    "lang": "en",
+    "scope": "/",
+    "version": "0.0.1",
+    "prefer_related_applications": true,
+    "categories": [
+        "utility"
+    ],
     "display_override": [
         "window-controls-overlay"
     ],
