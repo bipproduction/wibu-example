@@ -21,7 +21,7 @@
       }
     ],
     "categories": ["utility"],
-    "display_override": ["fullscreen"],
+    "display_override": ["fullscreen", "standalone", "window-controls-overlay"],
     "screenshots": [
       {
         "src": "/icons/base.png",
