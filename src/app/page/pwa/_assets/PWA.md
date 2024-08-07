@@ -44,7 +44,7 @@ app/manifest.json
     }
   ],
   "categories": ["utility"],
-  "display_override": ["window-controls-overlay"],
+  "display_override": ["fullscreen"],
   "screenshots": [
     {
       "src": "/icons/base.png",
@@ -106,9 +106,10 @@ app/manifest.json
   "theme_color": "#FFFFFF",
   "background_color": "#FFFFFF",
   "start_url": "/",
-  "display": "standalone",
+  "display": "fullscreen",
   "orientation": "portrait"
 }
+
 ```
 
 update metadata layout.tsx
