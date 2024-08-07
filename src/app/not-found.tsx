@@ -12,7 +12,7 @@ export default function Page() {
                 <Text>{"<"}</Text>
             </ActionIcon>
         </Flex>
-        <Box flex={1}>
+        <Box flex={1} p={"md"}>
             <Text>Halaman tidak ditemukan</Text>
         </Box>
     </Stack>
