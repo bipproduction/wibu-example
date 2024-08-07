@@ -20,12 +20,12 @@ export const dataPage = [
     "url": "/page/pararel-route"
   },
   {
-    "name": "react-html",
-    "url": "/page/react-html"
+    "name": "pwa",
+    "url": "/page/pwa"
   },
   {
-    "name": "redis",
-    "url": "/page/redis"
+    "name": "react-html",
+    "url": "/page/react-html"
   },
   {
     "name": "revalidate",

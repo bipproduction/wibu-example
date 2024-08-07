@@ -1,3 +1,3 @@
-import { CustomLoading } from "../../_component/CustomLoading";
+import { CustomLoading } from "../../../_component/CustomLoading";
 
 export default CustomLoading

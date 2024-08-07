@@ -1,3 +1,3 @@
-import { CustomDefault } from "../_component/CustomDefault";
+import { CustomDefault } from "../../_component/CustomDefault";
 
 export default CustomDefault
