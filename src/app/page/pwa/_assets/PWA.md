@@ -23,8 +23,27 @@ app/manifest.json
 ```json
 {
   "name": "wibu example",
+  "id": "makuro.bip.wibu.example",
+  "dir": "auto",
   "short_name": "WXM",
   "description": "wibu example",
+  "lang": "en",
+  "scope": "/",
+  "version": "0.0.1",
+  "prefer_related_applications": true,
+  "handle_links": "preferred",
+  "launch_handler": {
+    "client_mode": ["navigate-existing", "auto"]
+  },
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "scope_extensions": [
+    {
+      "origin": "*.ravenstone.cloud"
+    }
+  ],
+  "categories": ["utility"],
   "display_override": ["window-controls-overlay"],
   "screenshots": [
     {
