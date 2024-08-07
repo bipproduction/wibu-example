@@ -16,6 +16,10 @@ export const dataPage = [
     "url": "/page/map"
   },
   {
+    "name": "pararel-route",
+    "url": "/page/pararel-route"
+  },
+  {
     "name": "react-html",
     "url": "/page/react-html"
   },

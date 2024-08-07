@@ -1,8 +1,7 @@
-import { ActionIcon, Card, Flex, Paper, Skeleton, Stack, Text } from '@mantine/core'
+import { ActionIcon, Flex, Paper, Stack, Text } from '@mantine/core'
+import _ from 'lodash'
 import Link from 'next/link'
 import { LoadRepo } from './_component/LoadRepo'
-import { Suspense } from 'react'
-import _ from 'lodash'
 export default async function Page({ params }: { params: { repo: string } }) {
 
     return <Stack w={"100%"} p={"md"}>
@@ -11,20 +10,11 @@ export default async function Page({ params }: { params: { repo: string } }) {
                 <Text>{"<"}</Text>
             </ActionIcon>
         </Flex>
-        <Suspense fallback={<Stack flex={1}>
-            <Skeleton w={"100%"} h={20} />
-            <Skeleton w={"100%"} h={20} />
-            <Skeleton w={"100%"} h={20} />
-            <Skeleton w={"100%"} h={20} />
-
-        </Stack>}>
-
-            <LoadRepo repo={params.repo}>
-                {(data) => <Stack p={"md"}>
-                    <DisplayByType data={data} />
-                </Stack>}
-            </LoadRepo>
-        </Suspense>
+        <LoadRepo repo={params.repo}>
+            {(data) => <Stack p={"md"}>
+                <DisplayByType data={data} />
+            </Stack>}
+        </LoadRepo>
     </Stack>
 }
 
@@ -77,7 +67,7 @@ function DisplayByType({ data }: { data: any }) {
         </Stack>
     }
 
-    return <Text >{data+""}</Text>
+    return <Text >{data + ""}</Text>
 
 }
 

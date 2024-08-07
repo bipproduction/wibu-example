@@ -1,5 +1,5 @@
 import { dataPage } from "@/lib/list_page";
-import { Card, Flex, Stack, Text, Title } from "@mantine/core";
+import { Card, Flex, Loader, Stack, Text, Title } from "@mantine/core";
 import Link from "next/link";
 
 export default function Page() {
