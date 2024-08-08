@@ -1,7 +1,7 @@
 "use server";
 
 import prisma from "@/lib/db/prisma";
-import { revalidateTag } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 
 export async function createRevalidateTag(formData: FormData) {
   const name = formData.get("name") as string;
@@ -15,6 +15,7 @@ export async function createRevalidateTag(formData: FormData) {
   });
 
   revalidateTag("revalidate-tag");
+  revalidatePath("/page/revalidate-tag");
   console.log("success");
   return {
     success: true,

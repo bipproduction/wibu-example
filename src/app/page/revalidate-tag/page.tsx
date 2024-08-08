@@ -2,10 +2,15 @@ import { Button, Card, Flex, Group, Stack, Text, TextInput, Title } from "@manti
 import { createRevalidateTag } from "./_lib/action/createRevalidateTag";
 import { getListRevalidateTag } from "./_lib/action/getListRevalidateTag";
 import _ from "lodash";
+import { headers } from 'next/headers'
 
 export default async function Page() {
-    const list: any[] = await getListRevalidateTag();
+    const origin = (new URL(headers().get("referer") || "")).origin;
+
+    if(!origin) return <div>error no origin</div>
+    const list: any[] = await getListRevalidateTag(origin!);
     return <Stack p={"md"}>
+        {origin+""}
         <Title order={3}>revalidate tag</Title>
         <Flex>
             <Card>

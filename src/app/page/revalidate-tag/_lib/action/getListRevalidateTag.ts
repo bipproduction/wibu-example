@@ -1,14 +1,10 @@
 "use server";
-import { headers } from "next/headers";
 
-export async function getListRevalidateTag() {
-  // host
-  const host = headers().get("host");
 
-  // protocol
-  const protocol = headers().get("x-forwarded-proto") || "http";
+export async function getListRevalidateTag(origin: string) {
+
   const res = await fetch(
-    `${protocol}://${host}/page/revalidate-tag/api/revalidate-tag`,
+    `${origin}/page/revalidate-tag/api/revalidate-tag`,
     {
       next: {
         tags: ["revalidate-tag"],
