@@ -13,6 +13,7 @@ export async function getListRevalidateTag() {
       next: {
         tags: ["revalidate-tag"],
       },
+      cache: "no-cache"
     }
   );
 
