@@ -5,12 +5,17 @@ import _ from "lodash";
 import { headers } from 'next/headers'
 
 export default async function Page() {
-    const origin = (new URL(headers().get("referer") || "")).origin;
+    const proto = headers().get("x-forwarded-proto");
+    const host = headers().get("x-forwarded-host");
+    const orign: any = await new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(`${proto}://${host}`)
+        }, 500)
+    })
 
-    if(!origin) return <div>error no origin</div>
-    const list: any[] = await getListRevalidateTag(origin!);
+    const list: any[] = await getListRevalidateTag(orign);
     return <Stack p={"md"}>
-        {origin+""}
+        {orign + ""}
         <Title order={3}>revalidate tag</Title>
         <Flex>
             <Card>
