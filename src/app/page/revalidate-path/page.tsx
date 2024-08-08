@@ -5,7 +5,7 @@ import { DeleteItemButton } from "./_ui/DeleteItemButton";
 
 export default function Page() {
     return <Stack p={"lg"} gap={"lg"}>
-        <Title order={2}>REVALIDATE</Title>
+        <Title order={2}>REVALIDAT PATHE</Title>
         <FormRevalidateExample />
         <LoadDataRevalidate>
             {(data: any[]) => <Stack>

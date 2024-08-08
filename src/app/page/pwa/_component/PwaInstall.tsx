@@ -1,7 +1,6 @@
 'use client'
 import { Button, Card, Stack } from '@mantine/core';
-import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export function PWAInstall() {
     const [deferredPrompt, setDeferredPrompt] = useState<any | null>(null);

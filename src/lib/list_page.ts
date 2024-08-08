@@ -28,8 +28,12 @@ export const dataPage = [
     "url": "/page/react-html"
   },
   {
-    "name": "revalidate",
-    "url": "/page/revalidate"
+    "name": "revalidate-path",
+    "url": "/page/revalidate-path"
+  },
+  {
+    "name": "revalidate-tag",
+    "url": "/page/revalidate-tag"
   },
   {
     "name": "scroll-flex",

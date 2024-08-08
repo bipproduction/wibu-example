@@ -1,7 +1,7 @@
 import fs from "fs";
 import _ from "lodash";
 type APIMethod = "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
-import jsonData from "../GIT_API.json";
+import jsonData from "./GIT_API.json";
 import path from "path";
 
 interface APIEndpoint {
