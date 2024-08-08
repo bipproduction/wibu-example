@@ -8,6 +8,5 @@ export async function loadExampleHookState() {
     "utf-8"
   );
 
-  console.log(example);
   return example;
 }
