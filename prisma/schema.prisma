@@ -62,3 +62,12 @@ model RevalidateTag {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+model CustomEvent {
+  id        String   @id @default(cuid())
+  name      String
+  desc      String?
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

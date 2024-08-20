@@ -1,8 +1,8 @@
-import { Button, Card, Flex, Group, Stack, Text, TextInput, Title } from "@mantine/core";
+import { Button, Card, Flex, Stack, Text, TextInput, Title } from "@mantine/core";
+import _ from "lodash";
+import { headers } from 'next/headers';
 import { createRevalidateTag } from "./_lib/action/createRevalidateTag";
 import { getListRevalidateTag } from "./_lib/action/getListRevalidateTag";
-import _ from "lodash";
-import { headers } from 'next/headers'
 
 export default async function Page() {
     const proto = headers().get("x-forwarded-proto");

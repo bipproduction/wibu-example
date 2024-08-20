@@ -38,5 +38,9 @@ export const dataPage = [
   {
     "name": "scroll-flex",
     "url": "/page/scroll-flex"
+  },
+  {
+    "name": "upload-image",
+    "url": "/page/upload-image"
   }
 ]
