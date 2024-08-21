@@ -13,7 +13,7 @@ export async function POST(request: Request) {
     return new Response("No file", { status: 400 });
   }
 
-  const fileName = _.kebabCase(file.name);
+  const fileName = _.kebabCase(file.name)+'.png';
   const filePath = path.join(root, fileName);
 
   // Konversi ArrayBuffer ke Buffer

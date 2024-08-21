@@ -1,5 +1,9 @@
 export const dataPage = [
   {
+    "name": "auth",
+    "url": "/page/auth"
+  },
+  {
     "name": "custom-hookstate",
     "url": "/page/custom-hookstate"
   },
