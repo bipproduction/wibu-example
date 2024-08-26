@@ -1,55 +1,10 @@
-// components/custom-editor.js
-'use client' // only in App Router
-import { CKEditor } from '@ckeditor/ckeditor5-react';
+'use client'
 import { Card, Stack, Title } from '@mantine/core';
 import { Editor } from '@tinymce/tinymce-react';
-import {
-    AutoImage,
-    Bold,
-    ClassicEditor,
-    Essentials,
-    Italic,
-    Mention,
-    Paragraph,
-    Undo,
-} from 'ckeditor5';
 import { useRef } from 'react';
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import SunEditor, { buttonList } from 'suneditor-react';
 import 'suneditor/dist/css/suneditor.min.css';
-
-
-import 'ckeditor5/ckeditor5.css';
-// import 'ckeditor5-premium-features/ckeditor5-premium-features.css';
-
-function CkEditor() {
-    return (
-        <Stack p={"md"} c={"dark"}>
-            <CKEditor
-                editor={ClassicEditor}
-                config={{
-                    toolbar: {
-                        items: ['undo', 'redo', 'bold', 'italic', 'numberedList', 'bulletedList'],
-                    },
-                    plugins: [
-                        Bold, Essentials, Italic, Mention, Paragraph, Undo, AutoImage,
-
-                    ],
-                    mention: {
-                        feeds: [
-                            {
-                                marker: '@',
-                                feed: [
-                                    '@apple', '@bears', '@brownie', '@cake', '@candy', '@canes', '@chocolate', '@cookie', '@cotton', '@cream',
-                                ],
-                            },
-                        ]
-                    },
-                    initialData: '<p>Hello from CKEditor 5 in React!</p>'
-                }}
-            />
-        </Stack>
-    );
-}
 
 function TinyMce() {
     const handleEditorChange = (content: string, editor: any) => {
@@ -131,12 +86,6 @@ const Suneditor = () => {
 export default function Page() {
     return <Stack>
         <Card>
-            <Stack>
-                <Title order={3}>CKEditor</Title>
-                <CkEditor />
-            </Stack>
-        </Card>
-        <Card>
             <TinyMce />
         </Card>
         <Card >
@@ -144,3 +93,4 @@ export default function Page() {
         </Card>
     </Stack>
 }
+
