@@ -1,20 +1,21 @@
 // components/custom-editor.js
 'use client' // only in App Router
-import React from 'react';
-import { Editor } from '@tinymce/tinymce-react';
-
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import { Card, Stack, Title } from '@mantine/core';
+import { Editor } from '@tinymce/tinymce-react';
 import {
-    ClassicEditor,
+    AutoImage,
     Bold,
+    ClassicEditor,
     Essentials,
     Italic,
     Mention,
     Paragraph,
     Undo,
-    AutoImage,
 } from 'ckeditor5';
+import { useRef } from 'react';
+import SunEditor, { buttonList } from 'suneditor-react';
+import 'suneditor/dist/css/suneditor.min.css';
 
 
 import 'ckeditor5/ckeditor5.css';
@@ -106,6 +107,27 @@ function TinyMce() {
     );
 }
 
+const Suneditor = () => {
+    const editor = useRef();
+
+    // The sunEditor parameter will be set to the core suneditor instance when this function is called
+    const getSunEditorInstance = (sunEditor: any) => {
+        editor.current = sunEditor;
+    };
+
+    function handleChange(content: any) {
+        console.log(content); //Get Content Inside Editor
+    }
+    return (
+        <Stack p={"md"}>
+            <Title order={3}> suneditor-react</Title>
+            <SunEditor setOptions={{
+                buttonList: buttonList.complex
+            }} onChange={handleChange} getSunEditorInstance={getSunEditorInstance} />
+        </Stack>
+    );
+};
+
 export default function Page() {
     return <Stack>
         <Card>
@@ -116,6 +138,9 @@ export default function Page() {
         </Card>
         <Card>
             <TinyMce />
+        </Card>
+        <Card >
+            <Suneditor />
         </Card>
     </Stack>
 }
