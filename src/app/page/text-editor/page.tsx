@@ -15,7 +15,7 @@ function TinyMce() {
         <Stack p={"md"}>
             <Title order={3}>TinyMCE Full-Featured Editor</Title>
             <Editor
-                apiKey="h2oh4lfrtn9xfcb14a79rzcszoz2wz8yov8p6bi2wstn0g0u" // You can get this from TinyMCE if you use their hosted version
+
                 init={{
                     height: 500,
                     menubar: true,

@@ -24,6 +24,10 @@ export const dataPage = [
     "url": "/page/pararel-route"
   },
   {
+    "name": "pdf",
+    "url": "/page/pdf"
+  },
+  {
     "name": "pwa",
     "url": "/page/pwa"
   },
