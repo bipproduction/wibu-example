@@ -1,11 +1,10 @@
 'use client'
-import { Stack } from "@mantine/core";
-import { PdfToImage } from "./_ui/PdfViewer";
-
+import { Stack, Text } from "@mantine/core";
+import dynamic from 'next/dynamic';
+const PdfToImage = dynamic(() => import('./_ui/PdfViewer').then((mod) => mod.default), { ssr: false });
+import { useSearchParams } from "next/navigation";
 export default function Page() {
-
     return <Stack>
-        <PdfToImage  />
-        {/* <PDF /> */}
+        <PdfToImage md="" />
     </Stack>
 }
