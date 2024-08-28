@@ -1,52 +1,72 @@
-'use client'
-import { useShallowEffect } from '@mantine/hooks';
-import { useState } from 'react';
-import { Document, Page, pdfjs } from 'react-pdf';
-pdfjs.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.worker.min.mjs';
-import 'react-pdf/dist/Page/AnnotationLayer.css';
-import 'react-pdf/dist/Page/TextLayer.css';
+import { useEffect, useState } from 'react';
+import { getDocument, GlobalWorkerOptions } from 'pdfjs-dist';
+import { Image, Skeleton, Stack } from '@mantine/core';
 
+GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.5.136/pdf.worker.min.mjs';
 
+export const PdfToImage = () => {
+  const [images, setImages] = useState<string[]>([]);
 
-export function PdfViewer() {
-  const [numPages, setNumPages] = useState<number>();
-  const [pageNumber, setPageNumber] = useState<number>(1);
-  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    const renderPages = async () => {
+      try {
+        const loadingTask = getDocument('/assets/ternak_lele.pdf');
+        const pdf = await loadingTask.promise;
+        const numPages = pdf.numPages;
+        const imagePromises = [];
 
-  function onDocumentLoadSuccess({ numPages }: { numPages: number }): void {
-    setNumPages(numPages);
-  }
+        for (let pageNum = 1; pageNum <= numPages; pageNum++) {
+          const renderPage = async (pageNum: number) => {
+            const page = await pdf.getPage(pageNum);
+            const viewport = page.getViewport({ scale: 2.0 });
 
-  useShallowEffect(() => {
-    if (window)
-      setReady(true);
-    // @ts-expect-error This does not exist outside of polyfill which this is doing
-    window.Promise.withResolvers = function () {
-      let resolve, reject;
-      const promise = new Promise((res, rej) => {
-        resolve = res;
-        reject = rej;
-      });
+            // Buat elemen canvas
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            canvas.width = viewport.width;
+            canvas.height = viewport.height;
 
-      return { promise, resolve, reject };
+            // Render halaman PDF ke dalam canvas
+            const renderContext: any = {
+              canvasContext: context,
+              viewport: viewport,
+            };
+            await page.render(renderContext).promise;
+
+            // Konversi canvas ke gambar (data URL)
+            return canvas.toDataURL('image/png');
+          };
+
+          imagePromises.push(renderPage(pageNum));
+        }
+
+        const imageSrcs = await Promise.all(imagePromises);
+        setImages(imageSrcs);
+      } catch (error) {
+        console.error('Error rendering PDF to images:', error);
+      }
     };
-  }, [])
 
-  if (!ready) return <div>Loading...</div>
-  try {
-    return (
-      <div>
-        <Document
-          file={"/assets/ternak_lele.pdf"}
-          onLoadSuccess={onDocumentLoadSuccess}
-        >
-          {Array.from(new Array(numPages), (el, index) => (
-            <Page key={`page_${index + 1}`} pageNumber={index + 1} />
-          ))}
-        </Document>
-      </div>
-    );
-  } catch (error) {
-    return <div>Not found</div>
-  }
+    renderPages();
+  }, []);
+
+  return (
+    <div>
+      {images.length > 0
+        ? images.map((src, index) => <Image key={index} src={src} alt={`Page ${index + 1}`} />)
+        : <CustomLoading />}
+    </div>
+  );
+};
+
+function CustomLoading() {
+  return <Stack p={"md"}>
+    <Skeleton height={200} />
+    <Skeleton height={200} />
+    <Skeleton height={200} />
+    <Skeleton height={200} />
+    <Skeleton height={200} />
+    <Skeleton height={200} />
+    <Skeleton height={200} />
+  </Stack>
 }

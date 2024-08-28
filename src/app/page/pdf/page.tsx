@@ -1,11 +1,11 @@
+'use client'
 import { Stack } from "@mantine/core";
-import { PdfViewer } from "./_ui/PdfViewer";
-import { PDF } from "./_ui/PDF";
+import { PdfToImage } from "./_ui/PdfViewer";
 
 export default function Page() {
 
     return <Stack>
-        <PdfViewer />
+        <PdfToImage  />
         {/* <PDF /> */}
     </Stack>
 }
