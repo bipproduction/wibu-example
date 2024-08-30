@@ -4,6 +4,10 @@ export const dataPage = [
     "url": "/page/auth"
   },
   {
+    "name": "calendar",
+    "url": "/page/calendar"
+  },
+  {
     "name": "custom-hookstate",
     "url": "/page/custom-hookstate"
   },
