@@ -47,6 +47,7 @@
     "react-draft-wysiwyg": "^1.15.0",
     "react-icons": "^5.2.1",
     "react-map-gl": "^7.1.7",
+    "rrule": "^2.8.1",
     "sass": "^1.77.8",
     "suneditor": "^2.47.0",
     "suneditor-react": "^3.6.1",
