@@ -8,6 +8,10 @@ export const dataPage = [
     "url": "/page/calendar"
   },
   {
+    "name": "copy-dir",
+    "url": "/page/copy-dir"
+  },
+  {
     "name": "custom-hookstate",
     "url": "/page/custom-hookstate"
   },

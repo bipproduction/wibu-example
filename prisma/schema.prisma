@@ -71,3 +71,23 @@ model CustomEvent {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+model Dir {
+  id        String     @id @default(cuid())
+  name      String
+  desc      String?
+  active    Boolean    @default(true)
+  variant   DirVariant
+  path      String?
+  ext       String?
+  parent    Dir?       @relation("parent", fields: [dirId], references: [id])
+  Dir       Dir[]      @relation("parent")
+  dirId     String?
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+}
+
+enum DirVariant {
+  DIR
+  FILE
+}
