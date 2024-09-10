@@ -16,10 +16,6 @@ export const dataPage = [
     "url": "/page/custom-hookstate"
   },
   {
-    "name": "github",
-    "url": "/page/github"
-  },
-  {
     "name": "login-github",
     "url": "/page/login-github"
   },
