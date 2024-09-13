@@ -16,6 +16,10 @@ export const dataPage = [
     "url": "/page/custom-hookstate"
   },
   {
+    "name": "download-button",
+    "url": "/page/download-button"
+  },
+  {
     "name": "login-github",
     "url": "/page/login-github"
   },
