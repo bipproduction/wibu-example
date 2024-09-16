@@ -62,5 +62,9 @@ export const dataPage = [
   {
     "name": "upload-image",
     "url": "/page/upload-image"
+  },
+  {
+    "name": "webpush",
+    "url": "/page/webpush"
   }
 ]
