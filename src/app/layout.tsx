@@ -7,11 +7,31 @@ import { ColorSchemeScript, MantineProvider } from "@mantine/core";
 
 import type { Metadata, Viewport } from "next";
 import { ScrollProvider } from "@/lib/ui/ScrollProvider";
+import { GlobalMqtt } from "./page/mqtt/_lib/globalMqtt";
+import mqtt from "mqtt";
 
 const APP_NAME = "WIBU EXAMPLE";
 const APP_DEFAULT_TITLE = "wibu example";
 const APP_TITLE_TEMPLATE = "%s - wibu";
 const APP_DESCRIPTION = "kumpulan example";
+
+if (!GlobalMqtt.client) {
+  const brokerUrl = "wss://io.wibudev.com"; // Ganti dengan URL broker MQTT kamu
+  const topic = "wibu"; // Ganti dengan topik yang sesuai
+
+  // Inisialisasi client MQTT
+  const client = mqtt.connect(brokerUrl);
+
+  client.on("connect", () => {
+    console.log("Connected to MQTT broker");
+  });
+
+  client.on("error", (error) => {
+    console.error("MQTT error:", error);
+  });
+
+  GlobalMqtt.setClient(client);
+}
 
 export const metadata: Metadata = {
   applicationName: APP_NAME,
