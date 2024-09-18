@@ -6,6 +6,7 @@ import MarkdownPreview from "@uiw/react-markdown-preview";
 export default function Page() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isBottom, setIsbottom] = useState(false);
+  
 
   useEffect(() => {
     const handleScroll = () => {
