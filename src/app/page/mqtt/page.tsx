@@ -16,6 +16,7 @@ export default function Page() {
     // Set client di state
     setClient(mqttClient);
 
+
     // Menerima pesan dari broker
     mqttClient.on("connect", () => {
       console.log("Connected to MQTT broker");
@@ -60,7 +61,7 @@ export default function Page() {
             kirim
           </Button>
           <div>
-            <h1>MQTT Message</h1>
+            <h1>MQTT Message Received</h1>
             <p>Received message: {message}</p>
           </div>
         </Stack>
