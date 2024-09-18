@@ -1,4 +1,5 @@
 "use client";
+// file src/app/page/scroll-bottom/page.tsx
 import { Stack } from "@mantine/core";
 import { useEffect, useRef, useState } from "react";
 import MarkdownPreview from "@uiw/react-markdown-preview";
